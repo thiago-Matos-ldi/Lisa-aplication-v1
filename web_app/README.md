@@ -128,29 +128,4 @@ gunicorn --bind 0.0.0.0:5000 --workers 4 app:app
 - Verifique se os arquivos `.pth` e `.pkl` estão na pasta `modelos/`
 - Confira os caminhos em `app.py`
 
-### Dispositivos não acessam o servidor
 
-- Verifique se estão na mesma rede Wi-Fi
-- Desative firewall temporariamente para teste
-- Use o IP correto mostrado no console
-
-## 📊 Desempenho
-
-- **Tempo de processamento**: ~200-500ms por imagem
-- **Uso de memória**: ~500MB-1GB
-- **Múltiplos usuários**: Suporta acesso simultâneo
-
-## 📝 Notas
-
-- A aplicação roda em modo debug por padrão
-- Para produção, desabilite debug e use Gunicorn
-- O modelo funciona melhor com boa iluminação
-- Mantenha a mão centralizada no quadro
-
-## 🤝 Contribuindo
-
-Este é um projeto acadêmico voltado para acessibilidade. Sugestões e melhorias são bem-vindas!
-
-## 📄 Licença
-
-Projeto desenvolvido para fins educacionais e de acessibilidade.
