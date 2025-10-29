@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre - LISA</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🤟 LISA</h1>
+            <p class="subtitle">Sobre o Projeto</p>
+        </header>
+
+        <main>
+            <div class="about-section">
+                <h2>O Projeto</h2>
+                <p>
+                    LISA é um sistema de reconhecimento de sinais em Libras (Língua Brasileira de Sinais)
+                    que utiliza inteligência artificial para identificar gestos em tempo real.
+                </p>
+
+                <h3>🧠 Tecnologia</h3>
+                <ul>
+                    <li><strong>MediaPipe:</strong> Detecção de landmarks das mãos</li>
+                    <li><strong>CNN (PyTorch):</strong> Rede Neural Convolucional para classificação</li>
+                    <li><strong>Flask:</strong> Servidor web para acesso via rede</li>
+                </ul>
+
+                <h3>📊 Arquitetura do Modelo</h3>
+                <p>
+                    O modelo utiliza uma arquitetura CNN 1D que processa as coordenadas dos 21 pontos
+                    de landmark da mão detectados pelo MediaPipe:
+                </p>
+                <ul>
+                    <li>4 camadas convolucionais com BatchNorm e Dropout</li>
+                    <li>Camadas fully connected para classificação final</li>
+                    <li>Normalização MinMaxScaler para padronização dos dados</li>
+                </ul>
+
+                <h3>🎯 Objetivo</h3>
+                <p>
+                    Tornar a comunicação em Libras mais acessível através da tecnologia,
+                    permitindo que qualquer pessoa com um celular ou computador conectado
+                    à rede possa reconhecer sinais básicos.
+                </p>
+
+                <h3>🌐 Uso em Rede Local</h3>
+                <p>
+                    Esta aplicação pode ser acessada por qualquer dispositivo conectado à
+                    mesma rede Wi-Fi, incluindo smartphones, tablets e computadores.
+                </p>
+            </div>
+
+            <div class="back-link">
+                <a href="/" class="btn btn-primary">← Voltar para Reconhecimento</a>
+            </div>
+        </main>
+
+        <footer>
+            <p>Desenvolvido com ❤️ para acessibilidade</p>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+# Dependências da Aplicação Web LISA
+
+# Framework Web
+flask
+werkzeug
+waitress  # Servidor de produção para múltiplas conexões
+pyopenssl  # Para HTTPS (SSL)
+cryptography  # Necessário para certificados auto-assinados
+
+# Machine Learning
+torch
+torchvision
+
+# Processamento de Imagem
+opencv-python==4.9.0.80
+# mediapipe - Instalar separadamente (veja instruções abaixo)
+Pillow
+
+# Utilitários
+numpy==1.26.4  # OpenCV requer numpy >= 2.0
+pandas
+scikit-learn
+joblib
+
+# Servidor (opcional, para produção)
+# gunicorn  # Apenas para Linux/Mac, não funciona no Windows

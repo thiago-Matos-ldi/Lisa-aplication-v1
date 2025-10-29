@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LISA - Reconhecimento de Sinais</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🤟 LISA</h1>
+            <p class="subtitle">Reconhecimento de Sinais em Libras</p>
+        </header>
+
+        <main>
+            <div class="camera-section">
+                <div class="camera-status" id="cameraStatus" style="text-align: center; padding: 10px; margin-bottom: 10px; border-radius: 8px; background: #fff3cd; color: #856404; display: none;">
+                    <strong>⚠️ Aguardando permissão da câmera...</strong>
+                </div>
+                
+                <div class="camera-container">
+                    <video id="video" autoplay playsinline></video>
+                    <canvas id="canvas" style="display: none;"></canvas>
+                </div>
+                
+                <div class="controls">
+                    <button id="captureBtn" class="btn btn-primary" disabled>
+                        📸 Capturar Sinal
+                    </button>
+                    <button id="switchCameraBtn" class="btn btn-secondary" disabled>
+                        🔄 Trocar Câmera
+                    </button>
+                </div>
+            </div>
+
+            <div class="result-section" id="resultSection" style="display: none;">
+                <h2>Resultado</h2>
+                <div class="result-content">
+                    <div class="result-image">
+                        <img id="processedImage" alt="Imagem processada">
+                    </div>
+                    <div class="result-info">
+                        <div class="result-class">
+                            <span class="label">Sinal Detectado:</span>
+                            <span id="resultClass" class="value"></span>
+                        </div>
+                        <div class="result-confidence">
+                            <span class="label">Confiança:</span>
+                            <span id="resultConfidence" class="value"></span>
+                        </div>
+                    </div>
+                </div>
+                <button id="newCaptureBtn" class="btn btn-primary">
+                    🔄 Nova Captura
+                </button>
+            </div>
+
+            <div class="loading" id="loading" style="display: none;">
+                <div class="spinner"></div>
+                <p>Processando...</p>
+            </div>
+
+            <div class="info-section">
+                <h3>ℹ️ Como usar</h3>
+                <ol>
+                    <li>Posicione sua mão em frente à câmera</li>
+                    <li>Faça o sinal que deseja reconhecer</li>
+                    <li>Clique em "Capturar Sinal"</li>
+                    <li>Aguarde o resultado da classificação</li>
+                </ol>
+                
+                <div class="classes-info">
+                    <h4>Sinais Reconhecidos:</h4>
+                    <div class="classes-list">
+                        {% for classe in classes %}
+                            <span class="class-badge">{{ classe }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Desenvolvido com ❤️ para acessibilidade</p>
+            <a href="/sobre" class="link">Sobre o Projeto</a>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
